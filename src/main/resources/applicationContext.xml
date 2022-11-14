@@ -13,7 +13,8 @@
     <bean id="musicBean"
           class="ru.vladbstrv.springcourse.ClassicalMusic"
           init-method="doMyInit"
-          destroy-method="doMyDestroy"/>
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic"/>
 
     <!--    по умолчанию scope="singleton"-->
     <bean id="musicPlayerBean"

@@ -2,13 +2,16 @@ package ru.vladbstrv.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
-//    @Autowired
-//    @Qualifier("rockMusic")
     private Music music;
+    @Value("${musicPlayer.name}")
+    private String name;
+    @Value("${musicPlayer.volume}")
+    private int volume;
 
     @Autowired
     public MusicPlayer(
@@ -17,11 +20,13 @@ public class MusicPlayer {
         this.music = music;
     }
 
-//    @Autowired
-//    @Qualifier("rockMusic")
-//    public void setMusic(Music music) {
-//        this.music = music;
-//    }
+    public String getName() {
+        return name;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
 
     public void playMusic() {
         System.out.println("Playing: " + music.getSong());

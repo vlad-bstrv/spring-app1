@@ -15,7 +15,7 @@ public class MusicPlayer {
 
     @Autowired
     public MusicPlayer(
-            @Qualifier("rockMusic") Music music
+            @Qualifier("classicalMusic") Music music
     ) {
         this.music = music;
     }

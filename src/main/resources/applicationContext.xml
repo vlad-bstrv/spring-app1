@@ -12,8 +12,10 @@
     <bean id="musicBean"
           class="ru.vladbstrv.springcourse.ClassicalMusic"/>
 
+    <!--    по умолчанию scope="singleton"-->
     <bean id="musicPlayerBean"
-          class="ru.vladbstrv.springcourse.MusicPlayer">
+          class="ru.vladbstrv.springcourse.MusicPlayer"
+          scope="prototype">
         <property name="music" ref="musicBean"/>
 
         <property name="name" value="${musicPlayer.name}"/>

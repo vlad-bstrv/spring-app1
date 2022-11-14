@@ -9,8 +9,11 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
+    <!--    для prototype destroy не вызывается-->
     <bean id="musicBean"
-          class="ru.vladbstrv.springcourse.ClassicalMusic"/>
+          class="ru.vladbstrv.springcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"/>
 
     <!--    по умолчанию scope="singleton"-->
     <bean id="musicPlayerBean"
